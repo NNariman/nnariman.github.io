@@ -45,6 +45,7 @@
     background: var(--accent-dark);
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
     padding: 0.7rem;
@@ -57,6 +58,29 @@
     letter-spacing: 0.03em;
   }
   nav a:hover { text-decoration: underline; }
+  .lang-switch {
+    display: flex;
+    gap: 0.2rem;
+    border-left: 1px solid rgba(255,255,255,0.4);
+    padding-left: 1.2rem;
+  }
+  .lang-switch button {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: rgba(255,255,255,0.75);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.45rem;
+    cursor: pointer;
+  }
+  .lang-switch button:hover { color: white; }
+  .lang-switch button.active {
+    color: white;
+    border-color: rgba(255,255,255,0.7);
+    font-weight: bold;
+  }
   main {
     max-width: 850px;
     margin: 0 auto;
@@ -122,32 +146,38 @@
 <header>
  <img src="NN-large.JPG" alt="Nijat Nariman" class="profile-photo">
   <h1>Nijat Nariman</h1>
-  <p>Postdoctoral Researcher | Behavioural Ecology &amp; Molecular Evolution</p>
-  <p>Mainz, Germany &nbsp;|&nbsp; <a href="mailto:nijat.nariman@gmail.com">nijat.nariman@gmail.com</a></p>
+  <p data-i18n="role">Postdoctoral Researcher | Behavioural Ecology &amp; Molecular Evolution</p>
+  <p><span data-i18n="city">Mainz, Germany</span> &nbsp;|&nbsp; <a href="mailto:nijat.nariman@gmail.com">nijat.nariman@gmail.com</a></p>
   <p>
     <a href="https://orcid.org/0000-0003-1321-3243" target="_blank">ORCID</a> &nbsp;·&nbsp;
-    <a href="https://linktr.ee/nnariman" target="_blank">Links</a> &nbsp;·&nbsp;
+    <a href="https://linktr.ee/nnariman" target="_blank" data-i18n="links">Links</a> &nbsp;·&nbsp;
     <a href="https://scholar.google.com/citations?user=inLgrfcAAAAJ&hl=en" target="_blank">Google Scholar</a>
   </p>
 </header>
 
 <nav>
-  <a href="#research">Research</a>
-  <a href="#education">Education</a>
-  <a href="#positions">Positions</a>
-  <a href="#funding">Funding</a>
-  <a href="#publications">Publications</a>
-  <a href="#review">Peer Review</a>
-  <a href="#memberships">Memberships</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#contact">Contact</a>
+  <a href="#research" data-i18n="nav_research">Research</a>
+  <a href="#education" data-i18n="nav_education">Education</a>
+  <a href="#positions" data-i18n="nav_positions">Positions</a>
+  <a href="#funding" data-i18n="nav_funding">Funding</a>
+  <a href="#publications" data-i18n="nav_publications">Publications</a>
+  <a href="#review" data-i18n="nav_review">Peer Review</a>
+  <a href="#memberships" data-i18n="nav_memberships">Memberships</a>
+  <a href="#teaching" data-i18n="nav_teaching">Teaching</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en" lang="en">EN</button>
+    <button type="button" data-lang="de" lang="de">DE</button>
+    <button type="button" data-lang="ru" lang="ru">RU</button>
+    <button type="button" data-lang="az" lang="az">AZ</button>
+  </div>
 </nav>
 
 <main>
 
 <section id="research">
-  <h2>Research</h2>
-  <p>I investigate the behavioural ecology and evolutionary dynamics of invasive species and
+  <h2 data-i18n="h_research">Research</h2>
+  <p data-i18n="research_text">I investigate the behavioural ecology and evolutionary dynamics of invasive species and
   agricultural pests using integrative approaches spanning genomics, chemical ecology, trait
   manipulation and experimental evolution. My research addresses fundamental questions about
   dispersal behaviour, reproduction, insecticide resistance evolution, and predator–prey
@@ -158,53 +188,53 @@
 </section>
 
 <section id="education">
-  <h2>Education</h2>
+  <h2 data-i18n="h_education">Education</h2>
   <div class="entry">
-    <h3>Ph.D. in Natural Sciences</h3>
-    <p class="meta">April 2019 – March 2022 · University of Kaiserslautern-Landau (RPTU), Germany · Summa cum laude (1.0)</p>
-    <p>Thesis: "Ecology and evolution of the invasive spider <em>Mermessus trilobatus</em> in Europe." Supervisor: Prof. Dr. Martin Entling</p>
+    <h3 data-i18n="phd_title">Ph.D. in Natural Sciences</h3>
+    <p class="meta" data-i18n="phd_meta">April 2019 – March 2022 · University of Kaiserslautern-Landau (RPTU), Germany · Summa cum laude (1.0)</p>
+    <p data-i18n="phd_thesis">Thesis: "Ecology and evolution of the invasive spider <em>Mermessus trilobatus</em> in Europe." Supervisor: Prof. Dr. Martin Entling</p>
   </div>
   <div class="entry">
-    <h3>M.Sc. Environmental Sciences</h3>
-    <p class="meta">April 2016 – February 2019 · University of Kaiserslautern-Landau (RPTU), Germany · Grade 1.7</p>
-    <p>Thesis: "Effects of personality and chemical cues on non-consumptive effects of ants on spiders."</p>
+    <h3 data-i18n="msc_title">M.Sc. Environmental Sciences</h3>
+    <p class="meta" data-i18n="msc_meta">April 2016 – February 2019 · University of Kaiserslautern-Landau (RPTU), Germany · Grade 1.7</p>
+    <p data-i18n="msc_thesis">Thesis: "Effects of personality and chemical cues on non-consumptive effects of ants on spiders."</p>
   </div>
   <div class="entry">
-    <h3>B.Sc. Ecology</h3>
-    <p class="meta">September 2011 – May 2015 · Baku State University, Azerbaijan · 89.8/100</p>
+    <h3 data-i18n="bsc_title">B.Sc. Ecology</h3>
+    <p class="meta" data-i18n="bsc_meta">September 2011 – May 2015 · Baku State University, Azerbaijan · 89.8/100</p>
   </div>
   <div class="entry">
-  <h3>Secondary School Education</h3>
-  <p class="meta">September 2000 – May 2011 · Middle School No. 74, Baku (Irazin), Azerbaijan · Grade: 5/5 </p>
+  <h3 data-i18n="school_title">Secondary School Education</h3>
+  <p class="meta" data-i18n="school_meta">September 2000 – May 2011 · Middle School No. 74, Baku (Irazin), Azerbaijan · Grade: 5/5 </p>
   </div>
 </section>
 
 <section id="positions">
-  <h2>Academic Positions</h2>
+  <h2 data-i18n="h_positions">Academic Positions</h2>
   <ul>
-    <li><strong>Principal Investigator / Postdoctoral Researcher</strong> (from Jan 2027) — Department of Biogeography, Trier University, Germany</li>
-    <li><strong>Postdoctoral Researcher</strong> (June 2022 – Dec 2026) — Institute of Organismic and Molecular Evolution, Johannes Gutenberg University Mainz</li>
-    <li><strong>Guest Researcher</strong> (Apr 2024 – Sep 2026) — Max Planck Institute for Chemical Ecology, Jena</li>
-    <li><strong>Scientific Assistant</strong> (Apr 2019 – May 2022) — Institute for Environmental Sciences, RPTU</li>
-    <li><strong>Intern</strong> (Oct 2018 – Dec 2018) — Department of Behavioral Ecology, LMU Munich</li>
-    <li><strong>Student Assistant</strong> (Nov 2017 – Mar 2018) — Institute for Environmental Sciences, RPTU</li>
+    <li data-i18n="pos1"><strong>Principal Investigator / Postdoctoral Researcher</strong> (from Jan 2027) — Department of Biogeography, Trier University, Germany</li>
+    <li data-i18n="pos2"><strong>Postdoctoral Researcher</strong> (June 2022 – Dec 2026) — Institute of Organismic and Molecular Evolution, Johannes Gutenberg University Mainz</li>
+    <li data-i18n="pos3"><strong>Guest Researcher</strong> (Apr 2024 – Sep 2026) — Max Planck Institute for Chemical Ecology, Jena</li>
+    <li data-i18n="pos4"><strong>Scientific Assistant</strong> (Apr 2019 – May 2022) — Institute for Environmental Sciences, RPTU</li>
+    <li data-i18n="pos5"><strong>Intern</strong> (Oct 2018 – Dec 2018) — Department of Behavioral Ecology, LMU Munich</li>
+    <li data-i18n="pos6"><strong>Student Assistant</strong> (Nov 2017 – Mar 2018) — Institute for Environmental Sciences, RPTU</li>
   </ul>
 </section>
 
 <section id="funding">
-  <h2>Research Funding</h2>
+  <h2 data-i18n="h_funding">Research Funding</h2>
   <div class="card">
-    <h3>DFG Research Grant — Principal Investigator</h3>
-    <p class="meta">Project no. 591550176 · 2027–2030 · €433,263</p>
+    <h3 data-i18n="grant_title">DFG Research Grant — Principal Investigator</h3>
+    <p class="meta" data-i18n="grant_meta">Project no. 591550176 · 2027–2030 · €433,263</p>
     <p>"Genetic architecture of an invasion (GAI): Identifying genomic regions associated with high dispersal and fecundity in an invasive spider."</p>
   </div>
 </section>
 
 <section id="publications">
-  <h2>Publications</h2>
-  <p class="meta">11 peer-reviewed publications (8 first-author) · Google Scholar citations: 120 · h-index: 7</p>
+  <h2 data-i18n="h_publications">Publications</h2>
+  <p class="meta" data-i18n="pub_summary">11 peer-reviewed publications (8 first-author) · Google Scholar citations: 120 · h-index: 7</p>
 
-  <p class="pub-group-title">First-Author Publications</p>
+  <p class="pub-group-title" data-i18n="pub_first">First-Author Publications</p>
   <ul class="pub-list">
     <li>Nariman N, Agarwal H &amp; Xu S (2026) Sublethal insecticide exposure and inbreeding impose a developmental bottleneck but enhance crop-damaging traits in surviving Colorado potato beetles. <em>Royal Society Open Science</em>, 13: 261014. <a href="https://doi.org/10.1098/rsos.261014" target="_blank">DOI</a></li>
     <li>Nariman N, Entling MH, Krehenwinkel H &amp; Kennedy S (2025) The microbiome of an invasive spider: Reduced bacterial richness, but no indication of microbial-mediated dispersal behaviour. <em>Microbial Ecology</em>, 88: 70. <a href="https://doi.org/10.1007/s00248-025-02565-6" target="_blank">DOI</a></li>
@@ -216,19 +246,19 @@
     <li>Narimanov N, Kempel A, Van Kleunen M &amp; Entling MH (2021) Unexpected sensitivity of the highly invasive spider <em>Mermessus trilobatus</em> to soil disturbance in grasslands. <em>Biological Invasions</em>, 23: 1–6. <a href="https://doi.org/10.1007/s10530-020-02348-9" target="_blank">DOI</a></li>
   </ul>
 
-  <p class="pub-group-title">Co-Authored Publications</p>
+  <p class="pub-group-title" data-i18n="pub_co">Co-Authored Publications</p>
   <ul class="pub-list">
     <li>Edison A, Nariman N, Duchen P &amp; Xu S (2025) Bulk Segregant Analysis reveals genomic regions associated with imidacloprid resistance in the Colorado potato beetle. <em>Ecology and Evolution</em>, 15: e72527. <a href="https://doi.org/10.1002/ece3.72527" target="_blank">DOI</a></li>
     <li>Rech F, Narimanov N, Bauer T &amp; Schirmel J (2022) Urbanization increases fluctuating asymmetry and affects behavioral traits of a common grasshopper. <em>Ecology and Evolution</em>, 12: e9658. <a href="https://doi.org/10.1002/ece3.9658" target="_blank">DOI</a></li>
     <li>Mestre L, Narimanov N, Menzel F &amp; Entling MH (2020) Non-consumptive effects between predators depend on the foraging mode of intraguild prey. <em>Journal of Animal Ecology</em>, 89: 1690–1700. <a href="https://doi.org/10.1111/1365-2656.13224" target="_blank">DOI</a></li>
   </ul>
 
-  <p class="meta">Note: Publications prior to 2025 appear under "Narimanov"; recent work uses "Nariman" following name simplification.</p>
+  <p class="meta" data-i18n="pub_note">Note: Publications prior to 2025 appear under "Narimanov"; recent work uses "Nariman" following name simplification.</p>
 </section>
 
 <section id="review">
-  <h2>Peer Review Service</h2>
-  <p>Ad hoc reviewer (2021–present) for 15+ international journals across ecology and evolution.</p>
+  <h2 data-i18n="h_review">Peer Review Service</h2>
+  <p data-i18n="review_text">Ad hoc reviewer (2021–present) for 15+ international journals across ecology and evolution.</p>
   <div class="journal-tags">
     <span class="journal-tag">Communications Biology (2)</span>
     <span class="journal-tag">Ecography</span>
@@ -252,24 +282,24 @@
 </section>
 
 <section id="memberships">
-  <h2>Professional Memberships</h2>
+  <h2 data-i18n="h_memberships">Professional Memberships</h2>
   <ul>
-    <li><strong>Member</strong> (2026 – present) — International Society for Behavioural Ecology (ISBE)</li>
+    <li data-i18n="member1"><strong>Member</strong> (2026 – present) — International Society for Behavioural Ecology (ISBE)</li>
   </ul>
 </section>
 
 <section id="teaching">
-  <h2>Teaching &amp; Mentoring</h2>
+  <h2 data-i18n="h_teaching">Teaching &amp; Mentoring</h2>
   <ul>
-    <li>Course Instructor: "Organisms &amp; Their Environment" and "Research Methods in Ecology" — University of Kaiserslautern-Landau (RPTU; 2022)</li>
-    <li>Co-supervised 20+ students since 2017, including 2 PhD, 6 Master's, and 3 Bachelor's theses</li>
+    <li data-i18n="teach1">Course Instructor: "Organisms &amp; Their Environment" and "Research Methods in Ecology" — University of Kaiserslautern-Landau (RPTU; 2022)</li>
+    <li data-i18n="teach2">Co-supervised 20+ students since 2017, including 2 PhD, 6 Master's, and 3 Bachelor's theses</li>
   </ul>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:nijat.nariman@gmail.com">nijat.nariman@gmail.com</a></p>
-  <p>Location: Mainz, Rheinland-Pfalz, Germany</p>
+  <h2 data-i18n="h_contact">Contact</h2>
+  <p><span data-i18n="email_label">Email:</span> <a href="mailto:nijat.nariman@gmail.com">nijat.nariman@gmail.com</a></p>
+  <p data-i18n="location">Location: Mainz, Rheinland-Pfalz, Germany</p>
   <p>
     <a href="https://orcid.org/0000-0003-1321-3243" target="_blank">ORCID</a> ·
     <a href="https://linktr.ee/nnariman" target="_blank">Linktree</a>
@@ -278,9 +308,222 @@
 
 </main>
 
-<footer>
+<footer data-i18n="footer">
   &copy; 2026 Nijat Nariman. Built with GitHub Pages.
 </footer>
+
+<script>
+/* ------------------------------------------------------------------
+   TRANSLATIONS
+   English lives in the HTML above. Each key here matches a
+   data-i18n="..." attribute. If a key is missing for a language,
+   the English text is shown instead.
+   ------------------------------------------------------------------ */
+const TRANSLATIONS = {
+  de: {
+    role: "Postdoktorand | Verhaltensökologie &amp; Molekulare Evolution",
+    city: "Mainz, Deutschland",
+    links: "Links",
+    nav_research: "Forschung",
+    nav_education: "Ausbildung",
+    nav_positions: "Positionen",
+    nav_funding: "Förderung",
+    nav_publications: "Publikationen",
+    nav_review: "Gutachtertätigkeit",
+    nav_memberships: "Mitgliedschaften",
+    nav_teaching: "Lehre",
+    nav_contact: "Kontakt",
+    h_research: "Forschung",
+    research_text: "Ich erforsche die Verhaltensökologie und evolutionäre Dynamik invasiver Arten und landwirtschaftlicher Schädlinge mit integrativen Ansätzen aus Genomik, chemischer Ökologie, Merkmalsmanipulation und experimenteller Evolution. Meine Forschung befasst sich mit grundlegenden Fragen zu Ausbreitungsverhalten, Fortpflanzung, der Evolution von Insektizidresistenz und Räuber-Beute-Interaktionen, einschließlich Erkenntnissen, die für das Schädlingsmanagement relevant sind. Aktuell untersuche ich, wie Selektionsdruck Life-History-Merkmale und die Anpassung an Wirtspflanzen beim Kartoffelkäfer prägt. Künftig werde ich die Rolle von Mikrobiomen und molekularen Mechanismen bei der Resistenzevolution und dem Invasionserfolg untersuchen.",
+    h_education: "Ausbildung",
+    phd_title: "Promotion in Naturwissenschaften",
+    phd_meta: "April 2019 – März 2022 · RPTU Kaiserslautern-Landau, Deutschland · Summa cum laude (1,0)",
+    phd_thesis: "Dissertation: „Ecology and evolution of the invasive spider <em>Mermessus trilobatus</em> in Europe.“ Betreuer: Prof. Dr. Martin Entling",
+    msc_title: "M.Sc. Umweltwissenschaften",
+    msc_meta: "April 2016 – Februar 2019 · RPTU Kaiserslautern-Landau, Deutschland · Note 1,7",
+    msc_thesis: "Masterarbeit: „Effects of personality and chemical cues on non-consumptive effects of ants on spiders.“",
+    bsc_title: "B.Sc. Ökologie",
+    bsc_meta: "September 2011 – Mai 2015 · Staatliche Universität Baku, Aserbaidschan · 89,8/100",
+    school_title: "Schulbildung",
+    school_meta: "September 2000 – Mai 2011 · Mittelschule Nr. 74, Baku (Irazin), Aserbaidschan · Note: 5/5",
+    h_positions: "Akademische Positionen",
+    pos1: "<strong>Principal Investigator / Postdoc</strong> (ab Jan. 2027) — Abteilung Biogeographie, Universität Trier, Deutschland",
+    pos2: "<strong>Postdoc</strong> (Juni 2022 – Dez. 2026) — Institut für Organismische und Molekulare Evolution, Johannes Gutenberg-Universität Mainz",
+    pos3: "<strong>Gastwissenschaftler</strong> (Apr. 2024 – Sep. 2026) — Max-Planck-Institut für chemische Ökologie, Jena",
+    pos4: "<strong>Wissenschaftlicher Mitarbeiter</strong> (Apr. 2019 – Mai 2022) — Institut für Umweltwissenschaften, RPTU",
+    pos5: "<strong>Praktikant</strong> (Okt. 2018 – Dez. 2018) — Lehrstuhl für Verhaltensökologie, LMU München",
+    pos6: "<strong>Studentische Hilfskraft</strong> (Nov. 2017 – März 2018) — Institut für Umweltwissenschaften, RPTU",
+    h_funding: "Forschungsförderung",
+    grant_title: "DFG-Sachbeihilfe — Projektleiter",
+    grant_meta: "Projektnummer 591550176 · 2027–2030 · 433.263 €",
+    h_publications: "Publikationen",
+    pub_summary: "11 begutachtete Publikationen (8 als Erstautor) · Google-Scholar-Zitationen: 120 · h-Index: 7",
+    pub_first: "Publikationen als Erstautor",
+    pub_co: "Publikationen als Koautor",
+    pub_note: "Hinweis: Publikationen vor 2025 erscheinen unter „Narimanov“; neuere Arbeiten nach der Vereinfachung des Namens unter „Nariman“.",
+    h_review: "Gutachtertätigkeit",
+    review_text: "Ad-hoc-Gutachter (seit 2021) für mehr als 15 internationale Fachzeitschriften aus Ökologie und Evolution.",
+    h_memberships: "Mitgliedschaften in Fachgesellschaften",
+    member1: "<strong>Mitglied</strong> (seit 2026) — International Society for Behavioural Ecology (ISBE)",
+    h_teaching: "Lehre &amp; Betreuung",
+    teach1: "Dozent der Lehrveranstaltungen „Organisms &amp; Their Environment“ und „Research Methods in Ecology“ — RPTU Kaiserslautern-Landau (2022)",
+    teach2: "Mitbetreuung von mehr als 20 Studierenden seit 2017, darunter 2 Doktorarbeiten, 6 Master- und 3 Bachelorarbeiten",
+    h_contact: "Kontakt",
+    email_label: "E-Mail:",
+    location: "Standort: Mainz, Rheinland-Pfalz, Deutschland",
+    footer: "&copy; 2026 Nijat Nariman. Erstellt mit GitHub Pages."
+  },
+
+  ru: {
+    role: "Постдок | Поведенческая экология и молекулярная эволюция",
+    city: "Майнц, Германия",
+    links: "Ссылки",
+    nav_research: "Исследования",
+    nav_education: "Образование",
+    nav_positions: "Должности",
+    nav_funding: "Финансирование",
+    nav_publications: "Публикации",
+    nav_review: "Рецензирование",
+    nav_memberships: "Членство",
+    nav_teaching: "Преподавание",
+    nav_contact: "Контакты",
+    h_research: "Научные исследования",
+    research_text: "Я изучаю поведенческую экологию и эволюционную динамику инвазивных видов и сельскохозяйственных вредителей, используя интегративные подходы, объединяющие геномику, химическую экологию, манипуляцию признаками и экспериментальную эволюцию. Мои исследования посвящены фундаментальным вопросам расселительного поведения, размножения, эволюции устойчивости к инсектицидам и взаимодействий хищника и жертвы, включая результаты, важные для борьбы с вредителями. Сейчас я изучаю, как давление отбора формирует признаки жизненного цикла и адаптацию к кормовым растениям у колорадского жука. В дальнейшем я планирую исследовать роль микробиома и молекулярных механизмов в эволюции резистентности и успехе инвазий.",
+    h_education: "Образование",
+    phd_title: "PhD в области естественных наук",
+    phd_meta: "Апрель 2019 – март 2022 · Университет Кайзерслаутерн-Ландау (RPTU), Германия · Summa cum laude (1,0)",
+    phd_thesis: "Диссертация: «Ecology and evolution of the invasive spider <em>Mermessus trilobatus</em> in Europe». Научный руководитель: проф. д-р Мартин Энтлинг",
+    msc_title: "Магистр (M.Sc.) наук об окружающей среде",
+    msc_meta: "Апрель 2016 – февраль 2019 · Университет Кайзерслаутерн-Ландау (RPTU), Германия · Оценка 1,7",
+    msc_thesis: "Магистерская диссертация: «Effects of personality and chemical cues on non-consumptive effects of ants on spiders».",
+    bsc_title: "Бакалавр (B.Sc.) экологии",
+    bsc_meta: "Сентябрь 2011 – май 2015 · Бакинский государственный университет, Азербайджан · 89,8/100",
+    school_title: "Среднее образование",
+    school_meta: "Сентябрь 2000 – май 2011 · Средняя школа № 74, Баку (Irazin), Азербайджан · Оценка: 5/5",
+    h_positions: "Академические должности",
+    pos1: "<strong>Руководитель проекта / постдок</strong> (с января 2027) — кафедра биогеографии, Трирский университет, Германия",
+    pos2: "<strong>Постдок</strong> (июнь 2022 – декабрь 2026) — Институт организменной и молекулярной эволюции, Университет Иоганна Гутенберга, Майнц",
+    pos3: "<strong>Приглашённый исследователь</strong> (апрель 2024 – сентябрь 2026) — Институт химической экологии Общества Макса Планка, Йена",
+    pos4: "<strong>Научный сотрудник</strong> (апрель 2019 – май 2022) — Институт наук об окружающей среде, RPTU",
+    pos5: "<strong>Стажёр</strong> (октябрь 2018 – декабрь 2018) — кафедра поведенческой экологии, Мюнхенский университет (LMU)",
+    pos6: "<strong>Студент-ассистент</strong> (ноябрь 2017 – март 2018) — Институт наук об окружающей среде, RPTU",
+    h_funding: "Финансирование исследований",
+    grant_title: "Грант Немецкого научно-исследовательского сообщества (DFG) — руководитель проекта",
+    grant_meta: "Проект № 591550176 · 2027–2030 · 433 263 €",
+    h_publications: "Публикации",
+    pub_summary: "11 рецензируемых публикаций (8 в качестве первого автора) · Цитирования в Google Scholar: 120 · Индекс Хирша: 7",
+    pub_first: "Публикации в качестве первого автора",
+    pub_co: "Публикации в соавторстве",
+    pub_note: "Примечание: публикации до 2025 года вышли под фамилией «Narimanov»; более поздние работы — под упрощённой фамилией «Nariman».",
+    h_review: "Рецензирование",
+    review_text: "Рецензент (ad hoc, с 2021 года) более чем 15 международных журналов по экологии и эволюции.",
+    h_memberships: "Членство в профессиональных обществах",
+    member1: "<strong>Член</strong> (с 2026 года) — Международное общество поведенческой экологии (ISBE)",
+    h_teaching: "Преподавание и научное руководство",
+    teach1: "Преподаватель курсов «Organisms &amp; Their Environment» и «Research Methods in Ecology» — Университет Кайзерслаутерн-Ландау (RPTU; 2022)",
+    teach2: "Соруководство более чем 20 студентами с 2017 года, в том числе 2 диссертациями PhD, 6 магистерскими и 3 бакалаврскими работами",
+    h_contact: "Контакты",
+    email_label: "Эл. почта:",
+    location: "Местонахождение: Майнц, Рейнланд-Пфальц, Германия",
+    footer: "&copy; 2026 Nijat Nariman. Сайт создан с помощью GitHub Pages."
+  },
+
+  az: {
+    role: "Postdoktorant tədqiqatçı | Davranış ekologiyası və molekulyar təkamül",
+    city: "Maynts, Almaniya",
+    links: "Linklər",
+    nav_research: "Tədqiqat",
+    nav_education: "Təhsil",
+    nav_positions: "Vəzifələr",
+    nav_funding: "Maliyyələşdirmə",
+    nav_publications: "Nəşrlər",
+    nav_review: "Rəyçilik",
+    nav_memberships: "Üzvlüklər",
+    nav_teaching: "Tədris",
+    nav_contact: "Əlaqə",
+    h_research: "Tədqiqat",
+    research_text: "Mən genomika, kimyəvi ekologiya, əlamətlərin manipulyasiyası və eksperimental təkamülü birləşdirən inteqrativ yanaşmalarla invaziv növlərin və kənd təsərrüfatı zərərvericilərinin davranış ekologiyasını və təkamül dinamikasını tədqiq edirəm. Tədqiqatlarım yayılma davranışı, çoxalma, insektisidlərə davamlılığın təkamülü və yırtıcı–şikar qarşılıqlı əlaqələri ilə bağlı fundamental suallara, o cümlədən zərərvericilərə qarşı mübarizə üçün əhəmiyyətli nəticələrə yönəlib. Hazırkı işim seçmə təzyiqinin Kolorado kartof böcəyində həyat tsikli əlamətlərini və qida bitkisinə uyğunlaşmanı necə formalaşdırdığını araşdırır. Gələcəkdə mikrobiomun və molekulyar mexanizmlərin davamlılığın təkamülündə və invaziyanın uğurunda rolunu tədqiq etməyi planlaşdırıram.",
+    h_education: "Təhsil",
+    phd_title: "Təbiət elmləri üzrə fəlsəfə doktoru (PhD)",
+    phd_meta: "Aprel 2019 – mart 2022 · Kayzerslautern-Landau Universiteti (RPTU), Almaniya · Summa cum laude (1,0)",
+    phd_thesis: "Dissertasiya: “Ecology and evolution of the invasive spider <em>Mermessus trilobatus</em> in Europe.” Elmi rəhbər: Prof. Dr. Martin Entling",
+    msc_title: "Ətraf mühit elmləri üzrə magistr (M.Sc.)",
+    msc_meta: "Aprel 2016 – fevral 2019 · Kayzerslautern-Landau Universiteti (RPTU), Almaniya · Qiymət 1,7",
+    msc_thesis: "Magistr dissertasiyası: “Effects of personality and chemical cues on non-consumptive effects of ants on spiders.”",
+    bsc_title: "Ekologiya üzrə bakalavr (B.Sc.)",
+    bsc_meta: "Sentyabr 2011 – may 2015 · Bakı Dövlət Universiteti, Azərbaycan · 89,8/100",
+    school_title: "Orta təhsil",
+    school_meta: "Sentyabr 2000 – may 2011 · 74 nömrəli orta məktəb, Bakı (Irazin), Azərbaycan · Qiymət: 5/5",
+    h_positions: "Akademik vəzifələr",
+    pos1: "<strong>Layihə rəhbəri / postdoktorant tədqiqatçı</strong> (yanvar 2027-dən) — Biocoğrafiya şöbəsi, Trir Universiteti, Almaniya",
+    pos2: "<strong>Postdoktorant tədqiqatçı</strong> (iyun 2022 – dekabr 2026) — Orqanizm və Molekulyar Təkamül İnstitutu, Yohannes Qutenberq Universiteti, Maynts",
+    pos3: "<strong>Qonaq tədqiqatçı</strong> (aprel 2024 – sentyabr 2026) — Maks Plank Kimyəvi Ekologiya İnstitutu, Yena",
+    pos4: "<strong>Elmi işçi</strong> (aprel 2019 – may 2022) — Ətraf Mühit Elmləri İnstitutu, RPTU",
+    pos5: "<strong>Təcrübəçi</strong> (oktyabr 2018 – dekabr 2018) — Davranış Ekologiyası kafedrası, Münhen Universiteti (LMU)",
+    pos6: "<strong>Tələbə köməkçi</strong> (noyabr 2017 – mart 2018) — Ətraf Mühit Elmləri İnstitutu, RPTU",
+    h_funding: "Tədqiqatların maliyyələşdirilməsi",
+    grant_title: "Almaniya Tədqiqat Cəmiyyətinin (DFG) qrantı — layihə rəhbəri",
+    grant_meta: "Layihə № 591550176 · 2027–2030 · 433 263 €",
+    h_publications: "Nəşrlər",
+    pub_summary: "11 rəyçili nəşr (8-i birinci müəllif kimi) · Google Scholar istinadları: 120 · h-indeks: 7",
+    pub_first: "Birinci müəllif olduğum nəşrlər",
+    pub_co: "Həmmüəllif olduğum nəşrlər",
+    pub_note: "Qeyd: 2025-ci ilə qədərki nəşrlər “Narimanov”, sonrakılar isə soyadın sadələşdirilməsindən sonra “Nariman” adı ilə dərc olunub.",
+    h_review: "Rəyçilik fəaliyyəti",
+    review_text: "2021-ci ildən bəri ekologiya və təkamül üzrə 15-dən çox beynəlxalq jurnal üçün rəyçi (ad hoc).",
+    h_memberships: "Peşəkar cəmiyyətlərdə üzvlük",
+    member1: "<strong>Üzv</strong> (2026-cı ildən) — Beynəlxalq Davranış Ekologiyası Cəmiyyəti (ISBE)",
+    h_teaching: "Tədris və elmi rəhbərlik",
+    teach1: "Kurs müəllimi: “Organisms &amp; Their Environment” və “Research Methods in Ecology” — Kayzerslautern-Landau Universiteti (RPTU; 2022)",
+    teach2: "2017-ci ildən bəri 20-dən çox tələbəyə həmrəhbərlik, o cümlədən 2 doktorluq, 6 magistr və 3 bakalavr işi",
+    h_contact: "Əlaqə",
+    email_label: "E-poçt:",
+    location: "Yer: Maynts, Reynland-Pfals, Almaniya",
+    footer: "&copy; 2026 Nijat Nariman. GitHub Pages ilə hazırlanıb."
+  }
+};
+
+/* ------------------------------------------------------------------
+   LANGUAGE SWITCHER (no need to edit below this line)
+   ------------------------------------------------------------------ */
+(function () {
+  const LANGS = ["en", "de", "ru", "az"];
+  const elements = document.querySelectorAll("[data-i18n]");
+  const english = new Map();
+  elements.forEach(el => english.set(el, el.innerHTML));
+
+  function setLang(lang) {
+    if (!LANGS.includes(lang)) lang = "en";
+    const dict = TRANSLATIONS[lang] || {};
+    elements.forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      el.innerHTML = (lang !== "en" && dict[key]) ? dict[key] : english.get(el);
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll(".lang-switch button").forEach(b => {
+      const on = b.dataset.lang === lang;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on);
+    });
+    try { localStorage.setItem("site-lang", lang); } catch (e) {}
+  }
+
+  document.querySelectorAll(".lang-switch button").forEach(b =>
+    b.addEventListener("click", () => setLang(b.dataset.lang))
+  );
+
+  // Pick the starting language: ?lang=de in the URL, then the visitor's
+  // last choice, then their browser language, otherwise English.
+  let start = new URLSearchParams(location.search).get("lang");
+  if (!LANGS.includes(start)) {
+    try { start = localStorage.getItem("site-lang"); } catch (e) { start = null; }
+  }
+  if (!LANGS.includes(start)) {
+    start = (navigator.language || "en").slice(0, 2).toLowerCase();
+  }
+  setLang(start);
+})();
+</script>
 
 </body>
 </html>
